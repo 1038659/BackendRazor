@@ -1,0 +1,33 @@
+{
+  "Files": [
+    {
+      "Id": "/Users/taraninderdjiet/BackendRazor/obj/Debug/net8.0/scopedcss/projectbundle/BackendRazor.bundle.scp.css",
+      "PackagePath": "staticwebassets/BackendRazor.bundle.scp.css"
+    },
+    {
+      "Id": "/Users/taraninderdjiet/BackendRazor/wwwroot/spa.bundle.js",
+      "PackagePath": "staticwebassets/spa.bundle.js"
+    },
+    {
+      "Id": "/Users/taraninderdjiet/BackendRazor/wwwroot/spa.bundle.js.map",
+      "PackagePath": "staticwebassets/spa.bundle.js.map"
+    },
+    {
+      "Id": "obj/Debug/net8.0/staticwebassets/msbuild.BackendRazor.Microsoft.AspNetCore.StaticWebAssets.props",
+      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssets.props"
+    },
+    {
+      "Id": "obj/Debug/net8.0/staticwebassets/msbuild.build.BackendRazor.props",
+      "PackagePath": "build\\BackendRazor.props"
+    },
+    {
+      "Id": "obj/Debug/net8.0/staticwebassets/msbuild.buildMultiTargeting.BackendRazor.props",
+      "PackagePath": "buildMultiTargeting\\BackendRazor.props"
+    },
+    {
+      "Id": "obj/Debug/net8.0/staticwebassets/msbuild.buildTransitive.BackendRazor.props",
+      "PackagePath": "buildTransitive\\BackendRazor.props"
+    }
+  ],
+  "ElementsToRemove": []
+}
