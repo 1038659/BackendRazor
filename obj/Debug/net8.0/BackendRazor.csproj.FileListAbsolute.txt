@@ -32,3 +32,7 @@
 /Users/taraninderdjiet/BackendRazor/obj/Debug/net8.0/BackendRazor.pdb
 /Users/taraninderdjiet/BackendRazor/obj/Debug/net8.0/BackendRazor.genruntimeconfig.cache
 /Users/taraninderdjiet/BackendRazor/obj/Debug/net8.0/ref/BackendRazor.dll
+/Users/taraninderdjiet/BackendRazor/bin/Debug/net8.0/storage/person-104ddc60-e3e3-4ef8-96ce-e59d8c8a10de.json
+/Users/taraninderdjiet/BackendRazor/bin/Debug/net8.0/storage/person-9809d7f3-0ee8-4551-be7c-ddce5f12aafd.json
+/Users/taraninderdjiet/BackendRazor/bin/Debug/net8.0/storage/person-a44a14e7-c5be-458e-8f60-210d2f517cd0.json
+/Users/taraninderdjiet/BackendRazor/obj/Debug/net8.0/BackendRazor.sourcelink.json
