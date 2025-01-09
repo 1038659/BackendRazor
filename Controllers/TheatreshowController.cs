@@ -5,10 +5,10 @@ using Models;
 using System.Collections.Generic;
 using System.Linq;
 
-namespace BackendRazor.Controllers
+namespace Controllers
 {
     [ApiController]
-    [Route("api/[controller]")]
+    [Route("api/theatre-show")]
     public class TheatreShowController : ControllerBase
     {
         private readonly DatabaseContext _context; // Changed from ApplicationDbContext
@@ -18,7 +18,7 @@ namespace BackendRazor.Controllers
             _context = context;
         }
 
-        [HttpGet]
+        [HttpGet("GetAllShows")]
         [AllowAnonymous]
         public IActionResult GetAllShows()
         {

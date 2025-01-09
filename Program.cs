@@ -2,6 +2,8 @@ using Services;
 using System;
 using System.IO;
 using System.Reflection;
+using Microsoft.EntityFrameworkCore; // Ensure this line is present
+using Services;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -9,6 +11,10 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddControllersWithViews();
 builder.Services.AddTransient<IStorageService, StorageService>();
 builder.Services.AddTransient<IAuthService, AuthService>();
+
+// Register DatabaseContext
+builder.Services.AddDbContext<Models.DatabaseContext>(options =>
+    options.UseSqlite(builder.Configuration.GetConnectionString("DefaultConnection")));
 
 // Add session services
 builder.Services.AddDistributedMemoryCache();

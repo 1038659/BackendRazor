@@ -65,13 +65,7 @@
 /Users/taraninderdjiet/BackendRazor/obj/Debug/net8.0/ref/BackendRazor.dll
 /Users/taraninderdjiet/BackendRazor/bin/Debug/net8.0/Microsoft.EntityFrameworkCore.dll
 /Users/taraninderdjiet/BackendRazor/bin/Debug/net8.0/Microsoft.EntityFrameworkCore.Abstractions.dll
-/Users/taraninderdjiet/BackendRazor/bin/Debug/net8.0/Microsoft.Extensions.Caching.Abstractions.dll
-/Users/taraninderdjiet/BackendRazor/bin/Debug/net8.0/Microsoft.Extensions.Caching.Memory.dll
-/Users/taraninderdjiet/BackendRazor/bin/Debug/net8.0/Microsoft.Extensions.DependencyInjection.dll
-/Users/taraninderdjiet/BackendRazor/bin/Debug/net8.0/Microsoft.Extensions.DependencyInjection.Abstractions.dll
-/Users/taraninderdjiet/BackendRazor/bin/Debug/net8.0/Microsoft.Extensions.Logging.dll
-/Users/taraninderdjiet/BackendRazor/bin/Debug/net8.0/Microsoft.Extensions.Logging.Abstractions.dll
-/Users/taraninderdjiet/BackendRazor/bin/Debug/net8.0/Microsoft.Extensions.Options.dll
-/Users/taraninderdjiet/BackendRazor/bin/Debug/net8.0/Microsoft.Extensions.Primitives.dll
-/Users/taraninderdjiet/BackendRazor/bin/Debug/net8.0/System.Diagnostics.DiagnosticSource.dll
 /Users/taraninderdjiet/BackendRazor/bin/Debug/net8.0/System.Security.Permissions.dll
+/Users/taraninderdjiet/BackendRazor/bin/Debug/net8.0/Microsoft.EntityFrameworkCore.Relational.dll
+/Users/taraninderdjiet/BackendRazor/bin/Debug/net8.0/Microsoft.EntityFrameworkCore.Sqlite.dll
+/Users/taraninderdjiet/BackendRazor/bin/Debug/net8.0/Microsoft.Extensions.DependencyModel.dll

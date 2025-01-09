@@ -1,6 +1,8 @@
 using System.Diagnostics;
 using Microsoft.AspNetCore.Mvc;
-namespace BackendRazor.Controllers;
+namespace Controllers
+
+{
 
 
 
@@ -22,4 +24,4 @@ public class HomeController : Controller
     }
 
 }
-
+}

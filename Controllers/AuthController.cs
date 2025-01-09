@@ -4,7 +4,7 @@ using Services;
 using Microsoft.Extensions.Hosting;
 using System.IO;
 
-namespace BackendRazor.Controllers
+namespace Controllers
 {
     [Route("api/auth")]
     public class AuthController : Controller
