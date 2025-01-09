@@ -1,7 +1,7 @@
 using Microsoft.AspNetCore.Mvc;
 using Services;
 
-namespace frontend.Controllers
+namespace BackendRazor.Controllers
 {
   [Route("api/storage")]
   public class StorageController : Controller

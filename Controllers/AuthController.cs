@@ -1,16 +1,23 @@
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Http;
 using Services;
+using Microsoft.Extensions.Hosting;
+using System.IO;
 
-namespace frontend.Controllers
+namespace BackendRazor.Controllers
 {
     [Route("api/auth")]
     public class AuthController : Controller
     {
         private readonly IAuthService authService;
+        private readonly IHostEnvironment _env;
 
-        public AuthController(IAuthService authService)
+        private ISession Session => HttpContext.Session;
+
+        public AuthController(IAuthService authService, IHostEnvironment env)
         {
             this.authService = authService;
+            this._env = env;
         }
 
         [HttpPost("login")]
@@ -18,6 +25,18 @@ namespace frontend.Controllers
         {
             if (authService.Login(request.Username, request.Password))
             {
+                // Create session
+                HttpContext.Session.SetString("Username", request.Username);
+                HttpContext.Session.SetString("IsLoggedIn", "true");
+
+                // Access a file from "ExternalFiles"
+                var filePath = Path.Combine(_env.ContentRootPath, "ExternalFiles", "welcome.txt");
+                if (System.IO.File.Exists(filePath))
+                {
+                    var welcomeMessage = System.IO.File.ReadAllText(filePath);
+                    return Ok(new { message = "Login successful", welcomeMessage });
+                }
+
                 return Ok(new { message = "Login successful" });
             }
             return Unauthorized(new { message = "Invalid username or password" });
@@ -28,7 +47,15 @@ namespace frontend.Controllers
         {
             var isLoggedIn = authService.IsLoggedIn();
             var username = authService.GetLoggedInUser();
-            return Ok(new { isLoggedIn, username });
+            return Ok(new { isLoggedIn, username});
+        }
+
+        [HttpPost("logout")]
+        public IActionResult Logout()
+        {
+            // Clear session
+            HttpContext.Session.Clear();
+            return Ok(new { message = "Logout successful" });
         }
     }
 

@@ -7,6 +7,7 @@ namespace Services
         bool Login(string username, string password);
         bool IsLoggedIn();
         string GetLoggedInUser();
+
     }
 
     public class AuthService : IAuthService
@@ -14,21 +15,27 @@ namespace Services
         private readonly ConcurrentDictionary<string, string> users = new ConcurrentDictionary<string, string>();
         private string loggedInUser;
 
-        public AuthService()
-        {
-            // Predefined admin user
-            users.TryAdd("admin", "password123");
-        }
+
 
         public bool Login(string username, string password)
         {
-            if (users.TryGetValue(username, out var storedPassword) && storedPassword == password)
+            using (var connection = new Microsoft.Data.Sqlite.SqliteConnection("Data Source=/Users/taraninderdjiet/BackendRazor/Database.db"))
             {
+            connection.Open();
+            using (var command = new Microsoft.Data.Sqlite.SqliteCommand("SELECT Password FROM admin WHERE Username = @username", connection))
+            {
+                command.Parameters.AddWithValue("@username", username);
+                var storedPassword = command.ExecuteScalar() as string;
+                if (storedPassword != null && storedPassword == password)
+                {
                 loggedInUser = username;
                 return true;
+                }
+            }
             }
             return false;
         }
+        
 
         public bool IsLoggedIn()
         {
@@ -39,5 +46,6 @@ namespace Services
         {
             return loggedInUser;
         }
+
     }
 }
