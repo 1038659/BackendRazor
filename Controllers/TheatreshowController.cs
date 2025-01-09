@@ -4,6 +4,7 @@ using Microsoft.EntityFrameworkCore;
 using Models;
 using System.Collections.Generic;
 using System.Linq;
+using Services;
 
 namespace Controllers
 {
@@ -12,15 +13,17 @@ namespace Controllers
     public class TheatreShowController : ControllerBase
     {
         private readonly DatabaseContext _context; // Changed from ApplicationDbContext
+        private readonly IAuthService authService;
 
-        public TheatreShowController(DatabaseContext context) // Changed from ApplicationDbContext
+        public TheatreShowController(IAuthService authService, DatabaseContext context) // Changed from ApplicationDbContext
         {
-            _context = context;
+            this.authService = authService;
+            this._context = context;
         }
 
-        [HttpGet("GetAllShows")]
+        [HttpGet]
         [AllowAnonymous]
-        public IActionResult GetAllShows()
+        public IActionResult GetShows()
         {
             var shows = _context.TheatreShow
                 .Select(show => new
@@ -41,9 +44,102 @@ namespace Controllers
 
             return Ok(shows);
         }
+        [HttpGet("{id?}")]
+        [AllowAnonymous]
+        public IActionResult GetShows(int? id, string title = null, string description = null, string location = null, DateTime? startDate = null, DateTime? endDate = null, string sortBy = null, bool ascending = true)
+        {
+            if (id.HasValue)
+            {
+            var show = _context.TheatreShow
+                .Where(s => s.TheatreShowId == id.Value)
+                .Select(show => new
+                {
+                show.TheatreShowId,
+                show.Title,
+                show.Description,
+                show.Price,
+                Venue = new
+                {
+                    show.Venue.VenueId,
+                    show.Venue.Name,
+                    show.Venue.Capacity
+                },
+                Dates = show.theatreShowDates.Select(date => date.DateAndTime)
+                })
+                .FirstOrDefault();
 
-        [HttpPost]
-        [Authorize(Roles = "Admin")]
+            if (show == null)
+            {
+                return NotFound();
+            }
+
+            return Ok(show);
+            }
+
+            var showsQuery = _context.TheatreShow.AsQueryable();
+
+            if (!string.IsNullOrEmpty(title))
+            {
+            showsQuery = showsQuery.Where(s => s.Title.Contains(title));
+            }
+
+            if (!string.IsNullOrEmpty(description))
+            {
+            showsQuery = showsQuery.Where(s => s.Description.Contains(description));
+            }
+
+            if (!string.IsNullOrEmpty(location))
+            {
+            showsQuery = showsQuery.Where(s => s.Venue.Name.Contains(location));
+            }
+
+            if (startDate.HasValue)
+            {
+            showsQuery = showsQuery.Where(s => s.theatreShowDates.Any(d => d.DateAndTime >= startDate.Value));
+            }
+
+            if (endDate.HasValue)
+            {
+            showsQuery = showsQuery.Where(s => s.theatreShowDates.Any(d => d.DateAndTime <= endDate.Value));
+            }
+
+            switch (sortBy?.ToLower())
+            {
+            case "title":
+                showsQuery = ascending ? showsQuery.OrderBy(s => s.Title) : showsQuery.OrderByDescending(s => s.Title);
+                break;
+            case "price":
+                showsQuery = ascending ? showsQuery.OrderBy(s => s.Price) : showsQuery.OrderByDescending(s => s.Price);
+                break;
+            case "date":
+                showsQuery = ascending ? showsQuery.OrderBy(s => s.theatreShowDates.Min(d => d.DateAndTime)) : showsQuery.OrderByDescending(s => s.theatreShowDates.Max(d => d.DateAndTime));
+                break;
+            default:
+                showsQuery = ascending ? showsQuery.OrderBy(s => s.Title) : showsQuery.OrderByDescending(s => s.Title);
+                break;
+            }
+
+            var shows = showsQuery
+            .Select(show => new
+            {
+                show.TheatreShowId,
+                show.Title,
+                show.Description,
+                show.Price,
+                Venue = new
+                {
+                show.Venue.VenueId,
+                show.Venue.Name,
+                show.Venue.Capacity
+                },
+                Dates = show.theatreShowDates.Select(date => date.DateAndTime)
+            })
+            .ToList();
+
+            return Ok(shows);
+        }
+
+        [HttpPost("create")]
         public IActionResult CreateShow([FromBody] TheatreShowDto showDto)
         {
             var venue = _context.Venue.FirstOrDefault(v => v.VenueId == showDto.VenueId) ?? new Venue
@@ -64,7 +160,7 @@ namespace Controllers
             _context.TheatreShow.Add(show);
             _context.SaveChanges();
 
-            return CreatedAtAction(nameof(GetAllShows), new { id = show.TheatreShowId }, show);
+            return CreatedAtAction(nameof(GetShows), new { id = show.TheatreShowId }, show);
         }
 
         [HttpPut("{id}")]

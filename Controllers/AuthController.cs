@@ -29,6 +29,8 @@ namespace Controllers
                 HttpContext.Session.SetString("Username", request.Username);
                 HttpContext.Session.SetString("IsLoggedIn", "true");
 
+                
+
                 // Access a file from "ExternalFiles"
                 var filePath = Path.Combine(_env.ContentRootPath, "ExternalFiles", "welcome.txt");
                 if (System.IO.File.Exists(filePath))
