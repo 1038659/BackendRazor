@@ -19,15 +19,15 @@ module.exports = env => {
     },
     target: 'web',
     resolve: {
-      extensions: ['.ts', '.tsx', '.js'],
+      extensions: ['.js', '.jsx', '.ts', '.tsx'],
       fallback: {
         process: require.resolve("process/browser"),
         zlib: require.resolve("browserify-zlib"),
         stream: require.resolve("stream-browserify"),
         util: require.resolve("util"),
         buffer: require.resolve("buffer"),
-        asset: require.resolve("assert"),
-        _stream_transform: require.resolve("readable-stream/transform"),
+        assert: require.resolve("assert"),
+        "readable-stream": require.resolve("readable-stream"),
         "crypto": require.resolve("crypto-browserify")
       },
     },
@@ -36,10 +36,8 @@ module.exports = env => {
       rules: [
         {
           test: /\.tsx?$/,
-          use: [{
-            loader: 'babel-loader',
-          }],
-          exclude: '/node_modules/'
+          use: 'ts-loader',
+          exclude: /node_modules/,
         },
         { enforce: 'pre', test: /\.js$/, loader: 'source-map-loader' },
       ]
@@ -74,6 +72,12 @@ module.exports = env => {
       //     },
       //   },
       // },      
+    },
+    devServer: {
+      static: path.resolve(__dirname, '../wwwroot'),
+      open: true,
+      port: 8080, // You can specify the port here
+      hot: true,
     },
     plugins: [
       new ForkTsCheckerWebpackPlugin(),
