@@ -1952,11 +1952,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/Users/taraninderdjiet/BackendRazor/BackendRazor.csproj",
+      "projectUniqueName": "/Users/taraninderdjiet/Documents/GitHub/BackendRazor/BackendRazor.csproj",
       "projectName": "BackendRazor",
-      "projectPath": "/Users/taraninderdjiet/BackendRazor/BackendRazor.csproj",
+      "projectPath": "/Users/taraninderdjiet/Documents/GitHub/BackendRazor/BackendRazor.csproj",
       "packagesPath": "/Users/taraninderdjiet/.nuget/packages/",
-      "outputPath": "/Users/taraninderdjiet/BackendRazor/obj/",
+      "outputPath": "/Users/taraninderdjiet/Documents/GitHub/BackendRazor/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "/Users/taraninderdjiet/.nuget/NuGet/NuGet.Config"

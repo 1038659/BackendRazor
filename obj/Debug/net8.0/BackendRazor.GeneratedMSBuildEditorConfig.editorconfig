@@ -9,71 +9,71 @@ build_property.EnforceExtendedAnalyzerRules =
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = BackendRazor
 build_property.RootNamespace = BackendRazor
-build_property.ProjectDir = /Users/taraninderdjiet/BackendRazor/
+build_property.ProjectDir = /Users/taraninderdjiet/Documents/GitHub/BackendRazor/
 build_property.EnableComHosting = 
 build_property.EnableGeneratedComInterfaceComImportInterop = 
 build_property.RazorLangVersion = 8.0
 build_property.SupportLocalizedComponentNames = 
 build_property.GenerateRazorMetadataSourceChecksumAttributes = 
-build_property.MSBuildProjectDirectory = /Users/taraninderdjiet/BackendRazor
+build_property.MSBuildProjectDirectory = /Users/taraninderdjiet/Documents/GitHub/BackendRazor
 build_property._RazorSourceGeneratorDebug = 
 
-[/Users/taraninderdjiet/BackendRazor/Pages/Error.cshtml]
+[/Users/taraninderdjiet/Documents/GitHub/BackendRazor/Pages/Error.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXMvRXJyb3IuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/taraninderdjiet/BackendRazor/Pages/Index.cshtml]
+[/Users/taraninderdjiet/Documents/GitHub/BackendRazor/Pages/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXMvSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/taraninderdjiet/BackendRazor/Pages/Privacy.cshtml]
+[/Users/taraninderdjiet/Documents/GitHub/BackendRazor/Pages/Privacy.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXMvUHJpdmFjeS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/taraninderdjiet/BackendRazor/Pages/Shared/_ValidationScriptsPartial.cshtml]
+[/Users/taraninderdjiet/Documents/GitHub/BackendRazor/Pages/Shared/_ValidationScriptsPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXMvU2hhcmVkL19WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/taraninderdjiet/BackendRazor/Pages/_ViewImports.cshtml]
+[/Users/taraninderdjiet/Documents/GitHub/BackendRazor/Pages/_ViewImports.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXMvX1ZpZXdJbXBvcnRzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/taraninderdjiet/BackendRazor/Pages/_ViewStart.cshtml]
+[/Users/taraninderdjiet/Documents/GitHub/BackendRazor/Pages/_ViewStart.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXMvX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/taraninderdjiet/BackendRazor/Views/Home/Home.cshtml]
+[/Users/taraninderdjiet/Documents/GitHub/BackendRazor/Views/Home/Home.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3MvSG9tZS9Ib21lLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/taraninderdjiet/BackendRazor/Views/Home/Index.cshtml]
+[/Users/taraninderdjiet/Documents/GitHub/BackendRazor/Views/Home/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3MvSG9tZS9JbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/taraninderdjiet/BackendRazor/Views/Home/Privacy.cshtml]
+[/Users/taraninderdjiet/Documents/GitHub/BackendRazor/Views/Home/Privacy.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3MvSG9tZS9Qcml2YWN5LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/taraninderdjiet/BackendRazor/Views/Shared/Error.cshtml]
+[/Users/taraninderdjiet/Documents/GitHub/BackendRazor/Views/Shared/Error.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3MvU2hhcmVkL0Vycm9yLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/taraninderdjiet/BackendRazor/Views/Shared/_ValidationScriptsPartial.cshtml]
+[/Users/taraninderdjiet/Documents/GitHub/BackendRazor/Views/Shared/_ValidationScriptsPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3MvU2hhcmVkL19WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/taraninderdjiet/BackendRazor/Views/_ViewImports.cshtml]
+[/Users/taraninderdjiet/Documents/GitHub/BackendRazor/Views/_ViewImports.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3MvX1ZpZXdJbXBvcnRzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/taraninderdjiet/BackendRazor/Views/_ViewStart.cshtml]
+[/Users/taraninderdjiet/Documents/GitHub/BackendRazor/Views/_ViewStart.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3MvX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/taraninderdjiet/BackendRazor/Pages/Shared/_Layout.cshtml]
+[/Users/taraninderdjiet/Documents/GitHub/BackendRazor/Pages/Shared/_Layout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXMvU2hhcmVkL19MYXlvdXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = b-7hwy36rlbz
 
-[/Users/taraninderdjiet/BackendRazor/Views/Shared/_Layout.cshtml]
+[/Users/taraninderdjiet/Documents/GitHub/BackendRazor/Views/Shared/_Layout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3MvU2hhcmVkL19MYXlvdXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = b-hjbo69fkhu
